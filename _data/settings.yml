@@ -1,0 +1,34 @@
+# Change 'comments' to true for Disqus comments
+disqus:
+  comments: false
+  disqus_shortname: "millennial-3"
+
+# If you are not using Google Analytics, please change 'google-ID' to an empty string
+google-ID: " "
+
+menu:
+  - {
+      name: "Rolling Stylometry Explorer",
+      folder: "pages",
+      file: "explorer.html",
+    }
+  - { name: "Documentation", folder: "pages", file: "documentation.html" }
+  - { name: "Cite", folder: "pages", file: "cite.html" }
+  - { name: "Credit", folder: "pages", file: "credits.html" }
+  - { name: "About", folder: "pages", file: "about.html" }
+  - { name: "Contact", folder: "pages", file: "contact.html" }
+
+# Available social icons are powered by Font Awesome, so you can use any icon that they offer
+social:
+  - {
+      icon: "fa fa-file-download",
+      link: "https://github.com/stylo-explorer/rolling-classify-visualizer/archive/master.zip",
+    }
+  - {
+      icon: "fab fa-github",
+      link: "https://github.com/stylo-explorer/rolling-classify-visualizer",
+    }
+  - { icon: "fa fa-envelope", link: "mailto:lilly.osburg@live.de" }
+# - {icon: 'rss-square', link: 'rss-feed.xml'}
+
+# Customize site text

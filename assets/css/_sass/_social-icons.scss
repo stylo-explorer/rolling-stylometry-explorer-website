@@ -1,0 +1,84 @@
+$icon-transition-time: 1s;
+$envelope-color: #727272;
+$twitter-color: #727272;
+$instagram-color: #727272;
+$github-color: #727272;
+$linkedin-color: #727272;
+$facebook-color: #727272;
+$google-color: #727272;
+$pinterest-color: #727272;
+$medium-color: #727272;
+$codepen-color: #727272;
+$file-download-color: #727272;
+$rss-color: #727272;
+
+@mixin social-media-icon($color, $transition) {
+  -webkit-transition: $transition;
+  -o-transition: $transition;
+  -ms-transition: $transition;
+  -moz-transition: $transition;
+  transition: $transition;
+  &:hover {
+    color: $color;
+  }
+}
+
+.fa-envelope {
+  padding: 5px;
+  @include social-media-icon($envelope-color, $icon-transition-time);
+}
+
+.fa-file-download {
+  padding: 5px;
+  @include social-media-icon($file-download-color, $icon-transition-time);
+}
+
+.fa-twitter {
+  padding: 5px;
+  @include social-media-icon($twitter-color, $icon-transition-time);
+}
+
+.fa-instagram {
+  padding: 5px;
+  @include social-media-icon($instagram-color, $icon-transition-time);
+}
+
+.fa-github {
+  padding: 5px;
+  @include social-media-icon($github-color, $icon-transition-time);
+}
+
+.fa-linkedin {
+  padding: 5px;
+  @include social-media-icon($linkedin-color, $icon-transition-time);
+}
+
+.fa-facebook {
+  padding: 5px;
+  @include social-media-icon($facebook-color, $icon-transition-time);
+}
+
+.fa-google-plus {
+  padding: 5px;
+  @include social-media-icon($google-color, $icon-transition-time);
+}
+
+.fa-pinterest {
+  padding: 5px;
+  @include social-media-icon($pinterest-color, $icon-transition-time);
+}
+
+.fa-medium {
+  padding: 5px;
+  @include social-media-icon($medium-color, $icon-transition-time);
+}
+
+.fa-codepen {
+  padding: 5px;
+  @include social-media-icon($codepen-color, $icon-transition-time);
+}
+
+.fa-rss-square {
+  padding: 5px;
+  @include social-media-icon($rss-color, $icon-transition-time);
+}
