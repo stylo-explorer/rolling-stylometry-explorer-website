@@ -2,11 +2,12 @@
   padding: 0px 10px 10px;
 }
 .explorer-layout-content {
-
   display: block;
   margin-top: 10px;
-  margin-bottom: 10px; 
-  transform: translateX(calc((-100vw + 1200px) / 2));
-  width: calc(100vw - 140px);
-  
+  margin-bottom: 10px;
+
+  @media (min-width: $container-width) {
+    transform: translateX(calc((-100vw + 1200px) / 2));
+    width: calc(100vw - 140px);
+  }
 }
