@@ -1,5 +1,6 @@
 #try-it {
   display: grid;
+  justify-content:center;
   grid-template-columns: 200px auto;
   gap: 10px;
   button {
