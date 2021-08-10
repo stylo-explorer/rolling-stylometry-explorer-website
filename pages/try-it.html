@@ -5,7 +5,7 @@
 
   <title>
     
-      Rolling Stylometry Explorer | a tool to help you interpret your Rolling Stylometry results
+       | Rolling Stylometry Explorer
     
   </title>
 
@@ -43,16 +43,16 @@
 
   <!-- Use Jekyll SEO plugin -->
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Home | Rolling Stylometry Explorer</title>
+<title>Rolling Stylometry Explorer | a tool to help you interpret your Rolling Stylometry results</title>
 <meta name="generator" content="Jekyll v3.6.3" />
-<meta property="og:title" content="Home" />
+<meta property="og:title" content="Rolling Stylometry Explorer" />
 <meta name="author" content="Jonas Osburg, Lilly Osburg" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="a tool to help you interpret your Rolling Stylometry results" />
 <meta property="og:description" content="a tool to help you interpret your Rolling Stylometry results" />
 <meta property="og:site_name" content="Rolling Stylometry Explorer" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Jonas Osburg, Lilly Osburg"},"description":"a tool to help you interpret your Rolling Stylometry results","@type":"WebSite","url":"/","name":"Rolling Stylometry Explorer","headline":"Home","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Jonas Osburg, Lilly Osburg"},"description":"a tool to help you interpret your Rolling Stylometry results","@type":"WebPage","url":"/pages/try-it.html","headline":"Rolling Stylometry Explorer","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -136,7 +136,62 @@
 </header>
 
   <div class="posts-wrapper">
-    <img src="/assets/img/rolling_stylo.gif" style="max-width:100%;">
+    <div class="page-title explorer-layout-content">
+  <h1>
+    
+  </h1>
+
+<article>
+  <form id="try-it">
+  <label for="book">Book: </label>
+  <input type="file" id="book" required />
+  <label for="classification">classification.json: </label>
+  <input type="file" id="classification" required />
+  <button type="submit">Show result</button>
+</form>
+
+<script>
+  async function readFile(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.addEventListener("load", (file) => resolve(file.target.result));
+      reader.addEventListener("error", reject);
+      reader.readAsDataURL(file);
+    });
+  }
+  document.getElementById("try-it").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const bookFile = document.getElementById("book").files[0];
+    const classificationFile =
+      document.getElementById("classification").files[0];
+
+    const [book, classification] = await Promise.all([
+      readFile(bookFile),
+      readFile(classificationFile),
+    ]);
+    const el = document.createElement("stylo-explorer");
+    el.setAttribute("input-urls", "false");
+    el.setAttribute("book", book);
+    el.setAttribute("classification", classification);
+
+    document.getElementById("rendering-area").innerHTML = "";
+    document.getElementById("rendering-area").appendChild(el);
+
+    const webComponent = document.createElement("script");
+    webComponent.setAttribute(
+      "src",
+      "/assets/js/rolling-classify-visualizer.js"
+    );
+    document.getElementById("rendering-area").appendChild(webComponent);
+    document.getElementById("try-it").remove();
+  });
+</script>
+
+<div id="rendering-area"></div>
+
+</article>
+
+</div>
 
     <footer class="footer">
   
