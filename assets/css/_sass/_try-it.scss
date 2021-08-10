@@ -1,0 +1,8 @@
+#try-it {
+  display: grid;
+  grid-template-columns: 200px auto;
+  gap: 10px;
+  button {
+    grid-column-start: 1;
+  }
+}

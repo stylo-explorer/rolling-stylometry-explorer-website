@@ -12,6 +12,7 @@ menu:
       folder: "pages",
       file: "explorer.html",
     }
+  - { name: "Try it!", folder: "pages", file: "try-it.html" }
   - { name: "Documentation", folder: "pages", file: "documentation.html" }
   - { name: "Cite", folder: "pages", file: "cite.html" }
   - { name: "Credit", folder: "pages", file: "credits.html" }

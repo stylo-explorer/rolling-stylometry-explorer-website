@@ -1,0 +1,50 @@
+---
+layout: explorer-layout
+---
+
+<form id="try-it">
+  <label for="book">Book: </label>
+  <input type="file" id="book" required />
+  <label for="classification">classification.json: </label>
+  <input type="file" id="classification" required />
+  <button type="submit">Show result</button>
+</form>
+
+<script>
+  async function readFile(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.addEventListener("load", (file) => resolve(file.target.result));
+      reader.addEventListener("error", reject);
+      reader.readAsDataURL(file);
+    });
+  }
+  document.getElementById("try-it").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const bookFile = document.getElementById("book").files[0];
+    const classificationFile =
+      document.getElementById("classification").files[0];
+
+    const [book, classification] = await Promise.all([
+      readFile(bookFile),
+      readFile(classificationFile),
+    ]);
+    const el = document.createElement("stylo-explorer");
+    el.setAttribute("input-urls", "false");
+    el.setAttribute("book", book);
+    el.setAttribute("classification", classification);
+
+    document.getElementById("rendering-area").innerHTML = "";
+    document.getElementById("rendering-area").appendChild(el);
+
+    const webComponent = document.createElement("script");
+    webComponent.setAttribute(
+      "src",
+      "/assets/js/rolling-classify-visualizer.js"
+    );
+    document.getElementById("rendering-area").appendChild(webComponent);
+    document.getElementById("try-it").remove();
+  });
+</script>
+
+<div id="rendering-area"></div>
