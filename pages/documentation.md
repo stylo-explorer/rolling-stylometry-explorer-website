@@ -57,14 +57,14 @@ about the configurations, the analyzed text and possible authors. <i>json-consol
 <li>6. Move the generated <i>output.json</i> file to <i>/rolling-classify-visualizer/src/assets</i>
 <li>7. In the <i>explorer.html</i> file, pass the file path to the text to be analysed and to the JSON file. Implement
 the Rolling Sylometry Explorer on your website using npm...
-```bash
+<code>
 npm install rolling-classify-visualizer
-``` 
+</code> 
 ... import it in your Javascript
-```js
+<code>
 import 'rolling-classify-visualizer';
-```
-... and add the custom html-Tag to your website
+</code>
+... and add the custom html-Tag to your website (see example below)
 (or just try it out <a href="/pages/try-it.html">here</a>).
 </li>
 
