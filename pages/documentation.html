@@ -52,7 +52,7 @@
 <meta property="og:description" content="a tool to help you interpret your Rolling Stylometry results" />
 <meta property="og:site_name" content="Rolling Stylometry Explorer" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Jonas Osburg, Lilly Osburg"},"description":"a tool to help you interpret your Rolling Stylometry results","@type":"WebPage","url":"/pages/documentation.html","headline":"Rolling Stylometry Explorer","@context":"https://schema.org"}</script>
+{"description":"a tool to help you interpret your Rolling Stylometry results","@type":"WebPage","author":{"@type":"Person","name":"Jonas Osburg, Lilly Osburg"},"url":"/pages/documentation.html","headline":"Rolling Stylometry Explorer","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -198,7 +198,16 @@ about the configurations, the analyzed text and possible authors. <i>json-consol
 <i>output.json</i> file.</li>
 <li>6. Move the generated <i>output.json</i> file to <i>/rolling-classify-visualizer/src/assets</i>
 <li>7. In the <i>explorer.html</i> file, pass the file path to the text to be analysed and to the JSON file. Implement
-the Rolling Sylometry Explorer on your website using the <i>explorer.html</i> file (or just try it out <a href="/pages/try-it.html">here</a>).
+the Rolling Sylometry Explorer on your website using npm...
+```bash
+npm install rolling-classify-visualizer
+``` 
+... import it in your Javascript
+```js
+import 'rolling-classify-visualizer';
+```
+... and add the custom html-Tag to your website
+(or just try it out <a href="/pages/try-it.html">here</a>).
 </li>
 
 <b>Example</b><br />
